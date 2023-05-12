@@ -17,6 +17,7 @@
   "advanced": true,
   "hassio_api": true,
   "hassio_role": "backup",
+  "image": "ash16888/yc-s3-backup-{arch}",
   "options": {
     "aws_access_key": "",
     "aws_secret_access_key": "",
