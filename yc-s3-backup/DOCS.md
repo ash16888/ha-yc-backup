@@ -34,7 +34,7 @@ automation:
         name: "{{as_timestamp(trigger.now)|timestamp_custom('%Y%m%d%H%M', true)}}_automated-backup"
     - delay:
         hours: 0
-        minutes: 30
+        minutes: 15
         seconds: 0
         milliseconds: 0
     - service: hassio.addon_start
@@ -42,7 +42,7 @@ automation:
         addon: xxxxxxx_yc-s3-backup
 ```
 
-The automation above first creates a full backup at 4am, and then at 4:15am syncs to Amazon S3 and if configured deletes local backups according to your configuration.
+The automation above first creates a full backup at 4am, and then at 4:15am syncs to  S3 and if configured deletes local backups according to your configuration.
 
 ## Configuration
 
@@ -76,12 +76,15 @@ Should the addon remove oldest local backups after syncing to your Amazon S3 Buc
 ### Option: `local_backups_to_keep` (optional, Default: 3)
 How many backups you want to keep locally? If you want to disable automatic local cleanup, set `delete_local_backups` to false.
 
-
+## Additional check with cloud function
+To make sure that the backup is really loaded in S3, we will create a cloud function that will check the bucket for new uploaded files for the last 24 hours, if not, send an alert to telegram.
+See the cloud function documentation for details.
 
 ## Support
 
 Usage of the addon requires knowledge of Yandex Cloud S3.
 Under the hood it uses the aws cli version 1, specifically the `aws s3 sync` command.
+A
 
 ## Thanks
 This addon is fork  from https://github.com/thomasfr/hass-addons
