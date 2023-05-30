@@ -6,8 +6,9 @@ Follow these steps to get the add-on installed on your system:
 
 1. Enable **Advanced Mode** in your Home Assistant user profile.
 2. Navigate in your Home Assistant frontend to **Supervisor** -> **Add-on Store**.
-3. Search for "YC S3 Backup" add-on and click on it.
-4. Click on the "INSTALL" button.
+3. Add repository https://github.com/ash16888/ha-yc-backup
+4. Search for "YC S3 Backup" add-on and click on it.
+5. Click on the "INSTALL" button.
 
 ## How to use
 
