@@ -1,7 +1,7 @@
 {
   "name": "YC S3 Backup",
   "version": "1.0.0",
-  "slug": "yc-s3-backup",
+  "slug": "yc_s3_backup",
   "description": "Sync Backups to your Yandex Cloud S3 bucket",
   "url": "https://github.com/ash16888/ha-yc-backup/tree/main/yc-s3-backup",
   "arch": [
