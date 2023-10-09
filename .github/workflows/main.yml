@@ -67,7 +67,7 @@ jobs:
           context: ./yc-s3-backup
           file: ./yc-s3-backup/Dockerfile
           platforms: linux/amd64
-          build-args: | base_image=ghcr.io/home-assistant/amd64-base:3.17
+          build-args: base_image=ghcr.io/home-assistant/amd64-base:3.17
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta_haycbackup.outputs.tags }}
           labels: ${{ steps.meta_haycbackup.outputs.labels }}
