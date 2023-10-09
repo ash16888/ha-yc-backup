@@ -44,23 +44,6 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      -
-        name: Docker meta
-        id: meta_haycbackup
-        uses: docker/metadata-action@v3
-        with:
-          # list of Docker images to use as base name for tags
-          images: |
-            ghcr.io/ash16888/ha-yc-backup
-          # generate Docker tags based on the following events/attributes
-          tags: |
-            type=schedule
-            type=ref,event=branch
-            type=ref,event=pr
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=semver,pattern={{major}}
-            type=sha
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
@@ -69,5 +52,5 @@ jobs:
           platforms: linux/amd64
           build-args: BUILD_FROM=homeassistant/amd64-base:3.17
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta_haycbackup.outputs.tags }}
+          tags:  ghcr.io/ash16888/ha-yc-backup-amd64:1:0.0
           labels: ${{ steps.meta_haycbackup.outputs.labels }}
