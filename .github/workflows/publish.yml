@@ -1,4 +1,4 @@
-name: "Publish eda-modbus-bridge"
+name: "Publish ha-yc-backup"
 
 # Run manually only
 on: workflow_dispatch
@@ -20,4 +20,4 @@ jobs:
         with:
           args: |
             --all \
-            --target ha-yc-backup
+            --target yc-s3-backup
