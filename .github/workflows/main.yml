@@ -21,7 +21,7 @@ permissions:
   packages: write
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build-dogecoin:
+  build-haycbackup:
     runs-on: ubuntu-latest
     steps:
       # Get the repositery's code
@@ -64,7 +64,8 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
-          context: .
+          context: ./yc-s3-backup
+          file: ./yc-s3-backup/Dockerfile
           platforms: linux/amd64,linux/arm/v7
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta_haycbackup.outputs.tags }}
