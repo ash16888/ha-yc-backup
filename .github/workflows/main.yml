@@ -67,5 +67,5 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm/v7
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta_dogecoin.outputs.tags }}
-          labels: ${{ steps.meta_dogecoin.outputs.labels }}
+          tags: ${{ steps.meta_haycbackup.outputs.tags }}
+          labels: ${{ steps.meta_haycbackup.outputs.labels }}
