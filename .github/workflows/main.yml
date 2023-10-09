@@ -67,7 +67,7 @@ jobs:
           context: ./yc-s3-backup
           file: ./yc-s3-backup/Dockerfile
           platforms: linux/amd64,linux/arm/v7
-          build-args: ./yc-s3-backup/build.yaml
+          build-args: | ./yc-s3-backup/build.yaml
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta_haycbackup.outputs.tags }}
           labels: ${{ steps.meta_haycbackup.outputs.labels }}
